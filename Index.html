@@ -3,767 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Container Project Solutions - Secure Container Infrastructure</title>
+    <title>Humbu Enterprise - Complete Business Platform</title>
     <style>
-        /* ===== VARIABLES & RESET ===== */
         :root {
             --primary: #4361ee;
             --secondary: #3a0ca3;
             --accent: #4cc9f0;
+            --success: #2ecc71;
             --dark: #1d3557;
             --light: #f8f9fa;
-            --success: #2ecc71;
-            --warning: #f39c12;
-            --danger: #e74c3c;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-
-        .container {
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--dark); }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
-
-        /* ===== HERO SECTION ===== */
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero-section .tagline {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
+        
+        .platform-card {
             background: white;
-            color: var(--primary);
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* ===== FEATURES SECTION ===== */
-        .features-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--dark);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            margin: 15px auto;
-            border-radius: 2px;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-item {
+            border-radius: 15px;
             padding: 30px;
-            border-radius: 10px;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary);
             transition: transform 0.3s ease;
         }
-
-        .feature-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .feature-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        /* ===== INDUSTRY SECTION ===== */
-        .industry-section {
-            padding: 80px 0;
-            background: var(--dark);
-            color: white;
-        }
-
-        .industry-section .section-title {
-            color: white;
-        }
-
-        .industry-section .section-title::after {
-            background: var(--accent);
-        }
-
-        .industry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-
-        .industry-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .industry-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--accent);
-        }
-
-        /* ===== PRICING SECTION ===== */
-        .pricing-section {
-            padding: 80px 0;
-            background: var(--light);
-        }
         
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .pricing-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .pricing-card:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        .platform-card:hover {
             transform: translateY(-5px);
         }
-
-        .featured-card {
-            border: 3px solid var(--primary);
-            transform: scale(1.03);
-        }
         
-        .badge {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--accent);
-            color: var(--dark);
-            padding: 5px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .tier-tagline {
-            color: #6c757d;
-            margin-bottom: 20px;
-        }
-
-        .price {
-            margin: 30px 0;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--dark);
-        }
-
-        .price .currency {
-            font-size: 1.5rem;
-            vertical-align: super;
-        }
-
-        .price .period {
-            font-size: 1rem;
-            color: #6c757d;
-            font-weight: 500;
-        }
-        
-        .features-list {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 30px;
-            padding: 0;
-        }
-
-        .features-list li {
-            padding: 10px 0;
-            border-bottom: 1px dashed #eee;
-            color: var(--dark);
-            font-weight: 500;
+        .card-header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
         
-        .features-list li:last-child {
-            border-bottom: none;
-        }
-
-        .features-list i {
-            color: var(--success);
-            font-size: 1.1rem;
-        }
-        
-        .select-plan-btn {
-            display: block;
+        .card-icon {
+            width: 50px;
+            height: 50px;
             background: var(--primary);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .select-plan-btn:hover {
-            background: var(--secondary);
-        }
-
-        /* ===== STRATEGY SECTION ===== */
-        .strategy-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .strategy-card {
-            padding: 30px;
             border-radius: 10px;
-            background: var(--light);
-            border-left: 5px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
         }
-
-        .strategy-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+        
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact-section {
-            padding: 80px 0;
-            background: #f0f2f5;
-        }
-
-        .contact-card {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 50px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-section h2 {
+        
+        .status-ready { background: var(--success); color: white; }
+        .status-integration { background: var(--accent); color: var(--dark); }
+        .status-planning { background: #f39c12; color: white; }
+        
+        .integration-flow {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 30px;
-            color: var(--dark);
         }
-
-        .container-form {
+        
+        .flow-steps {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
         }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
+        
+        .flow-step {
+            text-align: center;
+            flex: 1;
         }
-
-        .form-group label {
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .container-form input[type="text"],
-        .container-form input[type="email"],
-        .container-form select,
-        .container-form textarea {
-            padding: 15px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .container-form input:focus,
-        .container-form select:focus,
-        .container-form textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .submit-button {
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
             background: var(--primary);
             color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
         }
-
-        .submit-button:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        /* ===== FORM SUCCESS MESSAGE ===== */
-        .form-success {
-            display: none;
-            background: var(--success);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .form-success.show {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-section .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .contact-card {
-                padding: 30px 20px;
-            }
-            
-            .featured-card {
-                transform: scale(1);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-section {
-                padding: 60px 0;
-            }
-            
-            .hero-section h1 {
-                font-size: 1.8rem;
-            }
-            
-            .feature-grid,
-            .industry-grid,
-            .strategy-grid,
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
+        
+        .step-arrow {
+            font-size: 1.5rem;
+            color: var(--primary);
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Launch Your Next Project Faster: Secure Container Solutions</h1>
-                <p class="tagline">
-                    We provide robust, scalable, and secure container infrastructure for your business, 
-                    handling deployment and management so you can focus on development.
-                </p>
-                <a href="#pricing" class="cta-button">View Pricing Plans</a>
+    <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center;">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">🚀 Humbu Enterprise Platform</h1>
+        <p style="font-size: 1.3rem; opacity: 0.9;">Unifying All Your Services Into One Powerful Business Ecosystem</p>
+    </div>
+
+    <div class="integration-flow">
+        <h2 style="margin-bottom: 30px; color: var(--dark);">Platform Integration Flow</h2>
+        <div class="flow-steps">
+            <div class="flow-step">
+                <div class="step-number">1</div>
+                <h4>Landing Page</h4>
+                <p>humbu-store-website</p>
+                <div class="status-badge status-ready">Ready</div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="flow-step">
+                <div class="step-number">2</div>
+                <h4>Utility Services</h4>
+                <p>Calculators & Tools</p>
+                <div class="status-badge status-ready">Ready</div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="flow-step">
+                <div class="step-number">3</div>
+                <h4>AI Business Advisor</h4>
+                <p>hwdia-ai-agent</p>
+                <div class="status-badge status-ready">Ready</div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="flow-step">
+                <div class="step-number">4</div>
+                <h4>Mobile Experience</h4>
+                <p>React Native App</p>
+                <div class="status-badge status-integration">Integrating</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title">Why Choose Our Container Service?</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Rapid Deployment</h3>
-                    <p>Go from idea to production in minutes, not weeks, with our automated tooling and CI/CD pipelines.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Security First</h3>
-                    <p>Built-in security protocols, vulnerability scanning, and compliance monitoring to keep your applications safe.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </div>
-                    <h3>Scalable Architecture</h3>
-                    <p>Easily scale up or down based on your business demand, ensuring 99.9% uptime with auto-scaling capabilities.</p>
+    <div class="platform-grid">
+        <div class="platform-card">
+            <div class="card-header">
+                <div class="card-icon">🌐</div>
+                <div>
+                    <h3>Web Platform</h3>
+                    <div class="status-badge status-ready">Live</div>
                 </div>
             </div>
+            <p>Complete SaaS landing page with integrated services and pricing tiers.</p>
+            <ul style="margin-top: 15px; padding-left: 20px;">
+                <li>Container Solutions Pricing</li>
+                <li>AI Business Advisor Integration</li>
+                <li>Lead Capture Forms</li>
+                <li>Responsive Design</li>
+            </ul>
         </div>
-    </section>
 
-    <!-- Industry Focus Section -->
-    <section class="industry-section">
-        <div class="container">
-            <h2 class="section-title">Industries We Serve</h2>
-            <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem;">
-                Based on your Ideal Customer Profile analysis, these industries benefit most from our secure container solutions
-            </p>
-            <div class="industry-grid">
-                <div class="industry-card">
-                    <div class="industry-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>SaaS Companies</h3>
-                    <p>Multi-tenant applications requiring secure isolation and rapid scaling</p>
-                </div>
-                <div class="industry-card">
-                    <div class="industry-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <h3>FinTech & Banking</h3>
-                    <p>Regulatory compliance, security, and high-availability requirements</p>
-                </div>
-                <div class="industry-card">
-                    <div class="industry-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>Healthcare Tech</h3>
-                    <p>HIPAA-compliant infrastructure for sensitive health data processing</p>
-                </div>
-                <div class="industry-card">
-                    <div class="industry-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>E-commerce</h3>
-                    <p>High-traffic platforms needing reliable scaling during peak seasons</p>
+        <div class="platform-card">
+            <div class="card-header">
+                <div class="card-icon">🤖</div>
+                <div>
+                    <h3>AI Services</h3>
+                    <div class="status-badge status-ready">Operational</div>
                 </div>
             </div>
+            <p>Universal AI Business Advisor with multiple specialized models.</p>
+            <ul style="margin-top: 15px; padding-left: 20px;">
+                <li>Business Strategy Planning</li>
+                <li>Market Analysis</li>
+                <li>Growth Recommendations</li>
+                <li>Real-time Insights</li>
+            </ul>
         </div>
-    </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <h2 class="section-title">Transparent & Scalable Pricing</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto; color: var(--dark);">
-                Choose the container infrastructure package that aligns with your current scale, with clear paths for seamless upgrading as you grow.
-            </p>
-
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Standard</h3>
-                    <p class="tier-tagline">The essential foundation for new projects.</p>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">499</span>
-                        <span class="period">/month</span>
-                    </div>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> Basic Container Orchestration</li>
-                        <li><i class="fas fa-check-circle"></i> 99.5% Uptime SLA</li>
-                        <li><i class="fas fa-check-circle"></i> Monitoring Dashboard (Metrics Only)</li>
-                        <li><i class="fas fa-check-circle"></i> Email Support (24-Hour Response)</li>
-                        <li><i class="fas fa-times-circle" style="color: var(--danger);"></i> Automated Security Scanning</li>
-                    </ul>
-                    <a href="#contact" class="select-plan-btn">Start Building</a>
-                </div>
-
-                <div class="pricing-card featured-card">
-                    <span class="badge">Recommended</span>
-                    <h3>Professional</h3>
-                    <p class="tier-tagline">Ideal for scaling businesses and production environments.</p>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">1,499</span>
-                        <span class="period">/month</span>
-                    </div>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>99.9% Uptime SLA</strong> (Critical Upsell!)</li>
-                        <li><i class="fas fa-check-circle"></i> Multi-Region Deployment</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Automated Security Scanning</strong></li>
-                        <li><i class="fas fa-check-circle"></i> Chat & Email Support (4-Hour Response)</li>
-                        <li><i class="fas fa-check-circle"></i> Advanced Log Management</li>
-                    </ul>
-                    <a href="#contact" class="select-plan-btn">Scale My Business</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Premium</h3>
-                    <p class="tier-tagline">Mission-critical speed and enterprise compliance.</p>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">4,999</span>
-                        <span class="period">/month+</span>
-                    </div>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>99.99% Uptime SLA</strong></li>
-                        <li><i class="fas fa-check-circle"></i> Dedicated Account Manager</li>
-                        <li><i class="fas fa-check-circle"></i> Full Compliance Audit (SOC 2)</li>
-                        <li><i class="fas fa-check-circle"></i> Dedicated Infrastructure</li>
-                        <li><i class="fas fa-check-circle"></i> Custom Integration Support</li>
-                    </ul>
-                    <a href="#contact" class="select-plan-btn">Request Enterprise Quote</a>
+        <div class="platform-card">
+            <div class="card-header">
+                <div class="card-icon">📱</div>
+                <div>
+                    <h3>Mobile App</h3>
+                    <div class="status-badge status-integration">Development</div>
                 </div>
             </div>
+            <p>Unified mobile experience combining all Humbu services.</p>
+            <ul style="margin-top: 15px; padding-left: 20px;">
+                <li>React Native Foundation</li>
+                <li>FastAPI Backend</li>
+                <li>Calculator Tools</li>
+                <li>AI Chat Interface</li>
+            </ul>
         </div>
-    </section>
 
-    <!-- Customer Acquisition Strategy -->
-    <section class="strategy-section">
-        <div class="container">
-            <h2 class="section-title">Customer Acquisition Strategy</h2>
-            <p style="text-align: center; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Based on AI analysis of your business, here's your targeted approach to customer acquisition
-            </p>
-            <div class="strategy-grid">
-                <div class="strategy-card">
-                    <h3>Ideal Customer Profile</h3>
-                    <p><strong>Primary:</strong> Tech startups (10-50 employees) with DevOps needs but limited infrastructure team</p>
-                    <p><strong>Secondary:</strong> Enterprise teams launching new products requiring isolated, secure environments</p>
-                    <p><strong>Vertical Focus:</strong> SaaS, FinTech, HealthTech, E-commerce platforms</p>
-                </div>
-                <div class="strategy-card">
-                    <h3>Channel Strategy</h3>
-                    <p><strong>Content Marketing:</strong> Technical blogs on container security and scaling</p>
-                    <p><strong>Partnerships:</strong> AWS/Azure marketplace, DevOps tool integrations</p>
-                    <p><strong>Outreach:</strong> Targeted LinkedIn campaigns to engineering directors</p>
-                </div>
-                <div class="strategy-card">
-                    <h3>Conversion Funnel</h3>
-                    <p><strong>Awareness:</strong> Technical content + open source tools</p>
-                    <p><strong>Consideration:</strong> Free security audit + architecture review</p>
-                    <p><strong>Conversion:</strong> Tiered pricing with 30-day free trial</p>
+        <div class="platform-card">
+            <div class="card-header">
+                <div class="card-icon">⚙️</div>
+                <div>
+                    <h3>Automation</h3>
+                    <div class="status-badge status-integration">Integrating</div>
                 </div>
             </div>
+            <p>Daily business automation and data processing scripts.</p>
+            <ul style="margin-top: 15px; padding-left: 20px;">
+                <li>Social Media Automation</li>
+                <li>Data Processing</li>
+                <li>Report Generation</li>
+                <li>Monitoring Scripts</li>
+            </ul>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="contact-card">
-                <h2>Ready to Launch? Contact Us.</h2>
-                <form action="https://formspree.io/f/mwpaegvd" method="POST" class="container-form">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Smith" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Business Email</label>
-                        <input type="email" id="email" name="email" placeholder="john@company.com" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="industry">Your Industry</label>
-                        <select id="industry" name="industry" required>
-                            <option value="">Select your industry</option>
-                            <option value="saas">SaaS/Software</option>
-                            <option value="fintech">FinTech/Banking</option>
-                            <option value="healthcare">Healthcare Tech</option>
-                            <option value="ecommerce">E-commerce</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="pricing-tier">Interested Pricing Tier</label>
-                        <select id="pricing-tier" name="pricing_tier" required>
-                            <option value="">Select a pricing tier</option>
-                            <option value="standard">Standard ($499/month)</option>
-                            <option value="professional">Professional ($1,499/month)</option>
-                            <option value="premium">Premium (Custom Quote)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Project Details</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your container infrastructure needs, security requirements, and scaling challenges..." rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-button">Request a Free Infrastructure Assessment</button>
-                    
-                    <!-- Success Message -->
-                    <div class="form-success" id="formSuccess">
-                        <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                        <h3>Thank You!</h3>
-                        <p>Your message has been sent successfully. We'll contact you within 24 hours.</p>
-                    </div>
-                </form>
+        <div class="platform-card">
+            <div class="card-header">
+                <div class="card-icon">🐳</div>
+                <div>
+                    <h3>Infrastructure</h3>
+                    <div class="status-badge status-ready">Ready</div>
+                </div>
             </div>
+            <p>Containerized deployment with Kubernetes orchestration.</p>
+            <ul style="margin-top: 15px; padding-left: 20px;">
+                <li>Docker Containers</li>
+                <li>Kubernetes Manifests</li>
+                <li>CI/CD Pipelines</li>
+                <li>Auto-scaling</li>
+            </ul>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Container Project Solutions. All rights reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.8;">Secure • Scalable • Production-Ready Container Infrastructure</p>
+        <div class="platform-card">
+            <div class="card-header">
+                <div class="card-icon">🔧</div>
+                <div>
+                    <h3>Utility APIs</h3>
+                    <div class="status-badge status-ready">Live</div>
+                </div>
+            </div>
+            <p>Calculator and conversion tools as microservices.</p>
+            <ul style="margin-top: 15px; padding-left: 20px;">
+                <li>Basic Calculator</li>
+                <li>Currency Converter</li>
+                <li>Unit Conversion</li>
+                <li>RESTful APIs</li>
+            </ul>
         </div>
-    </footer>
+    </div>
 
-    <!-- Font Awesome for Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    
-    <!-- Form Handling with Formspree -->
+    <div style="background: var(--dark); color: white; text-align: center; padding: 40px 20px; margin-top: 60px;">
+        <h2 style="margin-bottom: 20px;">Ready to Unify Your Platform?</h2>
+        <p style="margin-bottom: 30px; opacity: 0.9;">Let's transform your separate repositories into one powerful business ecosystem.</p>
+        <button style="background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
+            Start Integration Process
+        </button>
+    </div>
+
     <script>
-        document.querySelector('.container-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = this;
-            const submitButton = form.querySelector('.submit-button');
-            const originalText = submitButton.textContent;
-            
-            // Show loading state
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            // Submit to Formspree
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Show success message
-                    document.getElementById('formSuccess').classList.add('show');
-                    form.reset();
-                    
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        document.getElementById('formSuccess').classList.remove('show');
-                    }, 5000);
-                } else {
-                    alert('There was a problem sending your message. Please try again.');
-                }
-            })
-            .catch(error => {
-                alert('There was a problem sending your message. Please try again.');
-            })
-            .finally(() => {
-                // Reset button
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            });
+        document.querySelector('button').addEventListener('click', function() {
+            alert('🚀 Starting platform unification! We will:\n\n1. Create monorepo structure\n2. Dockerize all services\n3. Set up Kubernetes deployment\n4. Create unified API gateway\n5. Update landing page with all services');
         });
     </script>
 </body>
