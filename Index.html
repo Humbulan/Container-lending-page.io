@@ -1,267 +1,119 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humbu Enterprise - Complete Business Platform</title>
-    <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #4cc9f0;
-            --success: #2ecc71;
-            --dark: #1d3557;
-            --light: #f8f9fa;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--dark); }
-        
-        .platform-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .platform-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--primary);
-            transition: transform 0.3s ease;
-        }
-        
-        .platform-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-        
-        .status-badge {
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        
-        .status-ready { background: var(--success); color: white; }
-        .status-integration { background: var(--accent); color: var(--dark); }
-        .status-planning { background: #f39c12; color: white; }
-        
-        .integration-flow {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .flow-steps {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 40px 0;
-        }
-        
-        .flow-step {
-            text-align: center;
-            flex: 1;
-        }
-        
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 10px;
-            font-weight: bold;
-        }
-        
-        .step-arrow {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humbu Container & Logistics Solutions</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8; /* Light blue/grey for industrial feel */
+      color: #333;
+    }
+
+    header {
+      background-color: #004d99; /* Deep blue for trust and logistics */
+      color: #fff;
+      padding: 2em 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 0.2em;
+    }
+
+    nav {
+      background-color: #003366; /* Darker blue */
+      padding: 0.5em 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5em 1.5em;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #0066cc;
+    }
+
+    main {
+      padding: 2em;
+      margin: 1.5em auto;
+      max-width: 900px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-list li {
+      margin-bottom: 10px;
+      list-style-type: '📦 '; /* Container emoji for list items */
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #ff6600; /* Bright orange for action */
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #cc5200;
+    }
+
+    footer {
+      background-color: #333;
+      color: #ccc;
+      text-align: center;
+      padding: 1.5em 0;
+      margin-top: 2em;
+    }
+  </style>
 </head>
 <body>
-    <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center;">
-        <h1 style="font-size: 3rem; margin-bottom: 20px;">🚀 Humbu Enterprise Platform</h1>
-        <p style="font-size: 1.3rem; opacity: 0.9;">Unifying All Your Services Into One Powerful Business Ecosystem</p>
-    </div>
 
-    <div class="integration-flow">
-        <h2 style="margin-bottom: 30px; color: var(--dark);">Platform Integration Flow</h2>
-        <div class="flow-steps">
-            <div class="flow-step">
-                <div class="step-number">1</div>
-                <h4>Landing Page</h4>
-                <p>humbu-store-website</p>
-                <div class="status-badge status-ready">Ready</div>
-            </div>
-            <div class="step-arrow">→</div>
-            <div class="flow-step">
-                <div class="step-number">2</div>
-                <h4>Utility Services</h4>
-                <p>Calculators & Tools</p>
-                <div class="status-badge status-ready">Ready</div>
-            </div>
-            <div class="step-arrow">→</div>
-            <div class="flow-step">
-                <div class="step-number">3</div>
-                <h4>AI Business Advisor</h4>
-                <p>hwdia-ai-agent</p>
-                <div class="status-badge status-ready">Ready</div>
-            </div>
-            <div class="step-arrow">→</div>
-            <div class="flow-step">
-                <div class="step-number">4</div>
-                <h4>Mobile Experience</h4>
-                <p>React Native App</p>
-                <div class="status-badge status-integration">Integrating</div>
-            </div>
-        </div>
-    </div>
+  <header>
+    <h1>Humbu Container & Logistics</h1>
+    <p>Secure, Smart, and Sustainable Container Solutions, Powered by AI.</p>
+  </header>
 
-    <div class="platform-grid">
-        <div class="platform-card">
-            <div class="card-header">
-                <div class="card-icon">🌐</div>
-                <div>
-                    <h3>Web Platform</h3>
-                    <div class="status-badge status-ready">Live</div>
-                </div>
-            </div>
-            <p>Complete SaaS landing page with integrated services and pricing tiers.</p>
-            <ul style="margin-top: 15px; padding-left: 20px;">
-                <li>Container Solutions Pricing</li>
-                <li>AI Business Advisor Integration</li>
-                <li>Lead Capture Forms</li>
-                <li>Responsive Design</li>
-            </ul>
-        </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Our Services</a>
+    <a href="tracking.html">AI Tracking</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 
-        <div class="platform-card">
-            <div class="card-header">
-                <div class="card-icon">🤖</div>
-                <div>
-                    <h3>AI Services</h3>
-                    <div class="status-badge status-ready">Operational</div>
-                </div>
-            </div>
-            <p>Universal AI Business Advisor with multiple specialized models.</p>
-            <ul style="margin-top: 15px; padding-left: 20px;">
-                <li>Business Strategy Planning</li>
-                <li>Market Analysis</li>
-                <li>Growth Recommendations</li>
-                <li>Real-time Insights</li>
-            </ul>
-        </div>
+  <main>
+    <h2>Why Choose Humbu?</h2>
+    <p>We leverage advanced AI analytics—like the system you just built—to optimize shipping routes, minimize idle time, and provide real-time condition monitoring for your cargo containers.</p>
 
-        <div class="platform-card">
-            <div class="card-header">
-                <div class="card-icon">📱</div>
-                <div>
-                    <h3>Mobile App</h3>
-                    <div class="status-badge status-integration">Development</div>
-                </div>
-            </div>
-            <p>Unified mobile experience combining all Humbu services.</p>
-            <ul style="margin-top: 15px; padding-left: 20px;">
-                <li>React Native Foundation</li>
-                <li>FastAPI Backend</li>
-                <li>Calculator Tools</li>
-                <li>AI Chat Interface</li>
-            </ul>
-        </div>
+    <h2>Our Core Container Services</h2>
+    <ul class="service-list">
+      <li>**Container Leasing & Sales:** New and refurbished containers (20ft, 40ft).</li>
+      <li>**Real-Time Tracking:** Integration with our custom API for live location and security status.</li>
+      <li>**Cold Chain Logistics:** Specialized reefers for temperature-sensitive cargo.</li>
+      <li>**Custom Fabrication:** Modifying containers for site offices, storage, or housing units.</li>
+    </ul>
 
-        <div class="platform-card">
-            <div class="card-header">
-                <div class="card-icon">⚙️</div>
-                <div>
-                    <h3>Automation</h3>
-                    <div class="status-badge status-integration">Integrating</div>
-                </div>
-            </div>
-            <p>Daily business automation and data processing scripts.</p>
-            <ul style="margin-top: 15px; padding-left: 20px;">
-                <li>Social Media Automation</li>
-                <li>Data Processing</li>
-                <li>Report Generation</li>
-                <li>Monitoring Scripts</li>
-            </ul>
-        </div>
+    <a href="mailto:humbulani@humbu.store?subject=Inquiry%20for%20Container%20Quote&body=Hello%20Humbu%20Team,%0A%0AI%20am%20interested%20in%20your%20container%20services.%20Please%20send%20me%20a%20quote.%0A%0A" class="cta-button">Get a Free Quote Now!</a>
+  </main>
 
-        <div class="platform-card">
-            <div class="card-header">
-                <div class="card-icon">🐳</div>
-                <div>
-                    <h3>Infrastructure</h3>
-                    <div class="status-badge status-ready">Ready</div>
-                </div>
-            </div>
-            <p>Containerized deployment with Kubernetes orchestration.</p>
-            <ul style="margin-top: 15px; padding-left: 20px;">
-                <li>Docker Containers</li>
-                <li>Kubernetes Manifests</li>
-                <li>CI/CD Pipelines</li>
-                <li>Auto-scaling</li>
-            </ul>
-        </div>
+  <footer>
+    <p>&copy; 2025 Humbu Mandeme Solutions - All Rights Reserved</p>
+  </footer>
 
-        <div class="platform-card">
-            <div class="card-header">
-                <div class="card-icon">🔧</div>
-                <div>
-                    <h3>Utility APIs</h3>
-                    <div class="status-badge status-ready">Live</div>
-                </div>
-            </div>
-            <p>Calculator and conversion tools as microservices.</p>
-            <ul style="margin-top: 15px; padding-left: 20px;">
-                <li>Basic Calculator</li>
-                <li>Currency Converter</li>
-                <li>Unit Conversion</li>
-                <li>RESTful APIs</li>
-            </ul>
-        </div>
-    </div>
-
-    <div style="background: var(--dark); color: white; text-align: center; padding: 40px 20px; margin-top: 60px;">
-        <h2 style="margin-bottom: 20px;">Ready to Unify Your Platform?</h2>
-        <p style="margin-bottom: 30px; opacity: 0.9;">Let's transform your separate repositories into one powerful business ecosystem.</p>
-        <button style="background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
-            Start Integration Process
-        </button>
-    </div>
-
-    <script>
-        document.querySelector('button').addEventListener('click', function() {
-            alert('🚀 Starting platform unification! We will:\n\n1. Create monorepo structure\n2. Dockerize all services\n3. Set up Kubernetes deployment\n4. Create unified API gateway\n5. Update landing page with all services');
-        });
-    </script>
 </body>
 </html>
