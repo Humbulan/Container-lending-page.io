@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tracking - Humbu Container & Logistics</title>
+  <style>
+    /* Base Styles inherited from previous pages */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8; 
+      color: #333;
+    }
+
+    header {
+      background-color: #004d99; 
+      color: #fff;
+      padding: 2em 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #003366; 
+      padding: 0.5em 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5em 1.5em;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #0066cc;
+    }
+
+    main {
+      padding: 2em;
+      margin: 1.5em auto;
+      max-width: 900px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .feature-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border-top: 5px solid #ff6600; /* Orange accent */
+    }
+
+    .feature-card h3 {
+      color: #004d99;
+      margin-top: 0;
+      font-size: 1.2em;
+    }
+
+    .icon {
+      font-size: 2em;
+      color: #ff6600;
+      margin-bottom: 10px;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #ff6600; /* Bright orange for action */
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #cc5200;
+    }
+
+    footer {
+      background-color: #333;
+      color: #ccc;
+      text-align: center;
+      padding: 1.5em 0;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Humbu AI Tracking System</h1>
+    <p>Predictive, Secure, and Fully Connected Logistics.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Our Services</a>
+    <a href="tracking.html">AI Tracking</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <main>
+    <h2>Leveraging AI for Unmatched Visibility</h2>
+    <p>Our custom AI Agent (running on Port 8080) processes billions of data points—from weather and port congestion to historical delivery times—to give you an edge in global logistics. Your cargo isn't just tracked; it's intelligently managed.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">📍</div>
+        <h3>Real-Time Location</h3>
+        <p>Pinpoint accuracy using GPS and cellular data, integrated directly with your container booking reference.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="icon">🛡️</div>
+        <h3>Security Alerts (Geofencing)</h3>
+        <p>Immediate notifications if a container deviates from its planned route or enters/leaves a defined secure zone.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="icon">🌡️</div>
+        <h3>Condition Monitoring</h3>
+        <p>For reefer containers, track temperature, humidity, and atmospheric pressure in real-time to prevent cargo damage.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🔮</div>
+        <h3>Predictive ETA</h3>
+        <p>Our AI model recalculates the Estimated Time of Arrival (ETA) every hour, factoring in dynamic conditions for superior planning.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">💰</div>
+        <h3>Cost Optimization</h3>
+        <p>The AI suggests the most efficient routing options, helping you minimize fuel costs and avoid costly port delays.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="icon">💡</div>
+        <h3>Custom API Access</h3>
+        <p>Integrate our tracking data seamlessly into your own ERP or logistics management system via our RESTful API (Port 8000).</p>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="mailto:humbulani@humbu.store?subject=AI%20Tracking%20System%20Access%20Inquiry" class="cta-button">Request API Access and Demo</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Humbu Mandeme Solutions - All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
