@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redeem Services - Humbu Enterprise</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 60px 20px; background: white; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .redeem-form { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .form-group { margin: 20px 0; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
+        .cta-button { display: inline-block; background: linear-gradient(45deg, #e74c3c, #e67e22); color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; border: none; cursor: pointer; }
+        .nav { text-align: center; margin: 30px 0; }
+        .nav a { color: white; text-decoration: none; margin: 0 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">Home</a> | 
+            <a href="services.html">Services</a> | 
+            <a href="tracking.html">Project Tracking</a> |
+            <a href="redeem.html">Redeem Services</a>
+        </div>
+
+        <div class="header">
+            <h1>Redeem Your Services</h1>
+            <p>Activate your container, hosting, or AI platform services</p>
+        </div>
+
+        <div class="redeem-form">
+            <form action="mailto:humbulani@humbu.store" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="service">Select Service to Redeem:</label>
+                    <select id="service" name="service" required>
+                        <option value="">Choose a service...</option>
+                        <option value="web-hosting">Web Hosting (R250/month)</option>
+                        <option value="container-setup">Container Setup (R1,500/project)</option>
+                        <option value="ai-platform">AI Business Platform ($1,500/month)</option>
+                        <option value="domain">Domain Registration</option>
+                        <option value="consultation">Business Consultation</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project Details / Requirements:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Describe your project needs..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="voucher">Voucher Code (if applicable):</label>
+                    <input type="text" id="voucher" name="voucher" placeholder="Enter voucher code">
+                </div>
+
+                <button type="submit" class="cta-button">Redeem Service Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

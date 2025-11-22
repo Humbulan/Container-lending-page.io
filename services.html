@@ -1,137 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services - Humbu Container & Logistics</title>
-  <style>
-    /* NOTE: For a multi-page site, you should move the CSS 
-       from index.html into a separate file (e.g., style.css) 
-       and link it here using <link rel="stylesheet" href="style.css">.
-       For now, we'll keep the styles embedded for easy copy/paste.
-    */
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f4f8; 
-      color: #333;
-    }
-
-    header {
-      background-color: #004d99; 
-      color: #fff;
-      padding: 2em 0;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #003366; 
-      padding: 0.5em 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5em 1.5em;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #0066cc;
-    }
-
-    main {
-      padding: 2em;
-      margin: 1.5em auto;
-      max-width: 900px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-block {
-      margin-bottom: 2em;
-      padding: 1.5em;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      background-color: #fafafa;
-    }
-    
-    .service-block h3 {
-        color: #004d99;
-    }
-    
-    .cta-button-small {
-        display: inline-block;
-        padding: 8px 15px;
-        background-color: #ff6600; 
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        margin-top: 10px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #ccc;
-      text-align: center;
-      padding: 1.5em 0;
-      margin-top: 2em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Services - Humbu Enterprise</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 60px 20px; background: white; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin: 40px 0; }
+        .service-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .service-card h3 { color: #2c3e50; margin-bottom: 15px; font-size: 1.5em; }
+        .price-tag { font-size: 2em; color: #e74c3c; font-weight: bold; margin: 15px 0; }
+        .cta-button { display: inline-block; background: linear-gradient(45deg, #e74c3c, #e67e22); color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; margin: 10px 0; }
+        .nav { text-align: center; margin: 30px 0; }
+        .nav a { color: white; text-decoration: none; margin: 0 15px; }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">Home</a> | 
+            <a href="services.html">Services</a> | 
+            <a href="tracking.html">Project Tracking</a> |
+            <a href="redeem.html">Redeem Services</a>
+        </div>
 
-  <header>
-    <h1>Our Comprehensive Container Services</h1>
-    <p>Solutions tailored for logistics, storage, and specialized cargo needs.</p>
-  </header>
+        <div class="header">
+            <h1>Container & AI Business Services</h1>
+            <p>Complete solutions from web hosting to enterprise AI platforms</p>
+        </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Our Services</a>
-    <a href="tracking.html">AI Tracking</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>🚀 Web Hosting Solutions</h3>
+                <p>Professional hosting with domain registration, SSL security, and 24/7 support</p>
+                <ul>
+                    <li>Domain Registration (.co.za)</li>
+                    <li>Free SSL Certificates</li>
+                    <li>Unlimited Storage</li>
+                    <li>South African Support</li>
+                </ul>
+                <div class="price-tag">R250<span style="font-size: 0.7em; color: #7f8c8d;">/month</span></div>
+                <a href="https://www.interserver.net/r/1093924" target="_blank" class="cta-button">Get Hosting</a>
+            </div>
 
-  <main>
-    <h2>Logistics and Leasing</h2>
+            <div class="service-card">
+                <h3>🐳 Container Setup</h3>
+                <p>Custom Docker container environments and microservices architecture</p>
+                <ul>
+                    <li>Docker Container Setup</li>
+                    <li>Microservices Architecture</li>
+                    <li>Custom Configuration</li>
+                    <li>Deployment & Support</li>
+                </ul>
+                <div class="price-tag">R1,500<span style="font-size: 0.7em; color: #7f8c8d;">/project</span></div>
+                <a href="mailto:humbulani@humbu.store?subject=Container Setup" class="cta-button">Start Project</a>
+            </div>
 
-    <div class="service-block">
-      <h3>📦 Container Leasing & Sales</h3>
-      <p>We provide a wide range of new and refurbished containers, including **20ft Dry Vans**, **40ft High Cubes**, and **Specialized Open Tops**. Our team ensures competitive pricing and quality assurance.</p>
-      <a href="mailto:humbulani@humbu.store?subject=Leasing%20Inquiry" class="cta-button-small">Inquire About Pricing</a>
+            <div class="service-card">
+                <h3>🤖 AI Business Platform</h3>
+                <p>Complete enterprise AI platform with real-time monitoring and security</p>
+                <ul>
+                    <li>AI Service Integration</li>
+                    <li>Real-time Security Monitoring</li>
+                    <li>HTTPS/SSL Security</li>
+                    <li>Enterprise Dashboard</li>
+                </ul>
+                <div class="price-tag">$1,500<span style="font-size: 0.7em; color: #7f8c8d;">/month</span></div>
+                <a href="mailto:humbulani@humbu.store?subject=AI Platform" class="cta-button">Enterprise Inquiry</a>
+            </div>
+        </div>
     </div>
-
-    <div class="service-block">
-      <h3>❄️ Cold Chain Logistics (Reefers)</h3>
-      <p>Maintain precise temperature control for sensitive goods like pharmaceuticals and perishables. Our reefer units are monitored in real-time by the Humbu AI system for maximum safety and compliance.</p>
-      <a href="mailto:humbulani@humbu.store?subject=Reefer%20Services%20Inquiry" class="cta-button-small">View Reefer Specs</a>
-    </div>
-
-    <h2>Technology and Customization</h2>
-
-    <div class="service-block">
-      <h3>🛰️ Real-Time AI Tracking and Security</h3>
-      <p>Access our custom-built **AI Agent API** for live location data, geofencing alerts, and predictive maintenance insights. Reduce theft risk and downtime with smart, connected containers.</p>
-      <p>*(This service is powered by the AI system you just deployed on port 8080!)*</p>
-      <a href="tracking.html" class="cta-button-small">Learn About AI Tracking</a>
-    </div>
-
-    <div class="service-block">
-      <h3>📐 Custom Fabrication and Modification</h3>
-      <p>Need a container converted into a mobile office, workshop, or affordable housing unit? Our fabrication team designs and modifies containers to your exact specifications.</p>
-      <a href="mailto:humbulani@humbu.store?subject=Custom%20Fabrication%20Quote" class="cta-button-small">Get a Custom Quote</a>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Humbu Mandeme Solutions - All Rights Reserved</p>
-  </footer>
-
 </body>
 </html>
