@@ -1,120 +1,281 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Humbu Container & Logistics Solutions</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f4f8; /* Light blue/grey for industrial feel */
-      color: #333;
-    }
-
-    header {
-      background-color: #004d99; /* Deep blue for trust and logistics */
-      color: #fff;
-      padding: 2em 0;
-      text-align: center;
-    }
-
-    header h1 {
-      margin-bottom: 0.2em;
-    }
-
-    nav {
-      background-color: #003366; /* Darker blue */
-      padding: 0.5em 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5em 1.5em;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #0066cc;
-    }
-
-    main {
-      padding: 2em;
-      margin: 1.5em auto;
-      max-width: 900px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-list li {
-      margin-bottom: 10px;
-      list-style-type: '📦 '; /* Container emoji for list items */
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background-color: #ff6600; /* Bright orange for action */
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .cta-button:hover {
-      background-color: #cc5200;
-    }
-
-    footer {
-      background-color: #333;
-      color: #ccc;
-      text-align: center;
-      padding: 1.5em 0;
-      margin-top: 2em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humbu Trading Enterprise - Professional Web Hosting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .step {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+        }
+        
+        .step h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .step p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .price-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .price-tag {
+            font-size: 4em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .price-note {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature i {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c, #e67e22);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
+            margin: 20px 0;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .client-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            background: rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .price-tag {
+                font-size: 2.5em;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>Your Complete Web Hosting Solution</h1>
+            <p>From initial consultation to successful launch - we guide you through every step of your online journey</p>
+        </div>
 
-  <header>
-    <h1>Humbu Container & Logistics</h1>
-    <p>Secure, Smart, and Sustainable Container Solutions, Powered by AI.</p>
-  </header>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>1. Initial Consultation</h3>
+                <p>We discuss your business needs, goals, and technical requirements to create the perfect hosting plan</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>2. Setup & Configuration</h3>
+                <p>Our experts configure your hosting environment, domains, and security settings for optimal performance</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>3. Launch & Support</h3>
+                <p>We launch your website and provide ongoing support to ensure your online success</p>
+            </div>
+        </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Our Services</a>
-    <a href="tracking.html">AI Tracking</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
+        <div class="price-section">
+            <h2>Professional Hosting Packages</h2>
+            <div class="price-tag">R250<span style="font-size: 0.5em; color: #7f8c8d;">/month</span></div>
+            <p class="price-note">Perfect for small to medium businesses</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-globe"></i>
+                    <h4>Domain Registration</h4>
+                    <p>Professional .co.za domains</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>SSL Security</h4>
+                    <p>Free SSL certificates</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-database"></i>
+                    <h4>Unlimited Storage</h4>
+                    <p>Plenty of space to grow</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>Local South African support</p>
+                </div>
+            </div>
+            
+            <a href="https://www.humbu.store/contact" class="cta-button">
+                Start Your Project Today
+            </a>
+        </div>
 
-  <main>
-    <h2>Why Choose Humbu?</h2>
-    <p>We leverage advanced AI analytics—like the system you just built—to optimize shipping routes, minimize idle time, and provide real-time condition monitoring for your cargo containers.</p>
+        <div class="testimonial">
+            <p>"Humbu Trading Enterprise made our website launch seamless. From the initial consultation to the final launch, their professional approach and technical expertise were outstanding."</p>
+            <p class="client-name">- Satisfied Client</p>
+        </div>
 
-    <h2>Our Core Container Services</h2>
-    <ul class="service-list">
-      <li>**Container Leasing & Sales:** New and refurbished containers (20ft, 40ft).</li>
-      <li>**Real-Time Tracking:** Integration with our custom API for live location and security status.</li>
-      <li>**Cold Chain Logistics:** Specialized reefers for temperature-sensitive cargo.</li>
-      <li>**Custom Fabrication:** Modifying containers for site offices, storage, or housing units.</li>
-    </ul>
-
-    <a href="mailto:humbulani@humbu.store?subject=Inquiry%20for%20Container%20Quote&body=Hello%20Humbu%20Team,%0A%0AI%20am%20interested%20in%20your%20container%20services.%20Please%20send%20me%20a%20quote.%0A%0A" class="cta-button">GET STARTED with AI Logistics!</a>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Humbu Mandeme Solutions - All Rights Reserved</p>
-  </footer>
-
+        <div class="footer">
+            <p>&copy; 2024 Humbu Trading Enterprise. Professional Web Hosting Solutions.</p>
+            <p>Contact: humbulani@humbu.store | www.humbu.store</p>
+        </div>
+    </div>
 </body>
 </html>
